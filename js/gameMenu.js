@@ -11,7 +11,7 @@ export const createGameMenu = () => {
     const button = document.createElement('button')
 
     button.classList.add('game-menu__difficult-btn')
-    button.textContent = `${difficult} card`
+    button.textContent = `${difficult} cards`
 
     button.addEventListener('click', () => {})
 
