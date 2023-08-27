@@ -1,4 +1,4 @@
-import { createIconsArray } from './utils.js'
+import { createIconsArray, duplicateArray } from './utils.js'
 
 export const startGame = (difficult) => {
   let firstCard = null
@@ -8,4 +8,5 @@ export const startGame = (difficult) => {
   const gameSection = document.querySelector('.game-section__container')
   const gameTable = document.createElement('div')
   const cardsIcons = createIconsArray(difficult)
+  const duplicatedCardsIcons = duplicateArray(cardsIcons)
 }
