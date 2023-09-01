@@ -1,3 +1,6 @@
+import { confetti } from './confetti.js'
+import { createGameCard } from './gameCard.js'
+import { createGameMenu } from './gameMenu.js'
 import { createIconsArray, duplicateArray, shuffle } from './utils.js'
 
 export const startGame = (difficult) => {
@@ -25,6 +28,8 @@ export const startGame = (difficult) => {
   gameSection.append(gameTable, restartBtn)
 
   const cards = document.querySelectorAll('.game-card')
+
+  restartBtn.addEventListener('click', createGameMenu)
 
   cards.forEach((card, index) =>
     card.addEventListener('click', () => {
@@ -67,6 +72,12 @@ export const startGame = (difficult) => {
               clickable = true
             }, 500)
           }
+        }
+
+        if (
+          Array.from(cards).every((card) => card.className.includes('flip'))
+        ) {
+          document.querySelector('.confetti').innerHTML = confetti
         }
       }
     })
